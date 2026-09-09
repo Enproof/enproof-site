@@ -1,0 +1,17 @@
+# Private strategy and research
+docs/
+
+# Editor and operating-system files
+.cursor/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local preview and package artifacts
+node_modules/
+*.log
+.env
+.env.*
+!.env.example
