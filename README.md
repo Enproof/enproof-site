@@ -1,7 +1,7 @@
 # Enproof
 
-Minimal public website for [enproof.com](https://enproof.com), hosted with
-GitHub Pages under the Enproof organization.
+Minimal public website for [www.enproof.com](https://www.enproof.com), hosted
+with GitHub Pages under the Enproof organization.
 
 Public contact: [support@enproof.com](mailto:support@enproof.com).
 
@@ -18,7 +18,8 @@ Then open `http://localhost:8080`.
 ## Publishing
 
 GitHub Pages publishes the root of the `main` branch. The `CNAME` file sets
-`enproof.com` as the custom domain.
+`www.enproof.com` as the canonical custom domain. GitHub then redirects the
+apex (`enproof.com`) to `www.enproof.com` when both DNS records below exist.
 
 The repository should live at `enproof/enproof-site` so the `www` CNAME can
 point at `enproof.github.io` rather than a personal GitHub username.
@@ -36,11 +37,15 @@ CNAME. Leave `_domainconnect` and all Google Workspace mail records alone.
 | A | @ | 185.199.111.153 |
 | CNAME | www | `enproof.github.io` |
 
+The four `A` records are only so visitors who type `enproof.com` land on the
+same site. The public web name is `www.enproof.com`.
+
 Do not modify the domain's Google Workspace MX, SPF, DKIM, or DMARC records.
 
-After DNS propagation, confirm the custom domain in **Repository settings →
-Pages**, then enable **Enforce HTTPS**. Verify `enproof.com` at the
-organization Pages settings so no other GitHub user can claim it.
+After DNS propagation, confirm the custom domain is `www.enproof.com` in
+**Repository settings → Pages**, then enable **Enforce HTTPS**. Verify
+`enproof.com` at the organization Pages settings so no other GitHub user can
+claim it.
 
 ## Privacy
 

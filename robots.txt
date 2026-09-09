@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://enproof.com/sitemap.xml
+Sitemap: https://www.enproof.com/sitemap.xml
