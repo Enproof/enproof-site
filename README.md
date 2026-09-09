@@ -28,9 +28,8 @@ In GoDaddy, configure these website records:
 | A | @ | 185.199.109.153 |
 | A | @ | 185.199.110.153 |
 | A | @ | 185.199.111.153 |
-| CNAME | www | `GITHUB_USERNAME.github.io` |
+| CNAME | www | `boris-j-goldberg.github.io` |
 
-Replace `GITHUB_USERNAME` with the GitHub account that owns this repository.
 Do not modify the domain's Google Workspace MX, SPF, DKIM, or DMARC records.
 
 After DNS propagation, confirm the custom domain in **Repository settings →
