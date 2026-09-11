@@ -39,6 +39,10 @@ records.
 | A | @ | 185.199.110.153 |
 | A | @ | 185.199.111.153 |
 | CNAME | www | `enproof.github.io` |
+| TXT | `_github-pages-challenge-enproof` | `3ac5a631164fabcfd6657282d2a828` |
+
+On GoDaddy, the TXT **Name** is only `_github-pages-challenge-enproof`.
+Do not add `.enproof.com`; GoDaddy appends the zone automatically.
 
 Leave `_domainconnect` and all Google Workspace MX, SPF, DKIM, and DMARC
 records unchanged.
@@ -47,17 +51,30 @@ There must be only one `www` CNAME. Do not keep `www → enproof.com`.
 
 ## HTTPS
 
-After DNS points at GitHub, Pages issues a Let's Encrypt certificate. That
-can take from a few minutes up to 24 hours. Until it succeeds, browsers may
-warn on `https://www.enproof.com`.
+The repo Pages settings at
+[Enproof/enproof-site Pages](https://github.com/Enproof/enproof-site/settings/pages)
+should show:
 
-When GitHub shows a valid certificate:
+- Custom domain: `www.enproof.com`
+- DNS check successful
+- **Enforce HTTPS** enabled
 
-1. Open [Pages settings](https://github.com/Enproof/enproof-site/settings/pages)
-2. Confirm Custom domain is `www.enproof.com`
-3. Enable **Enforce HTTPS**
-4. Under the Enproof org, **Settings → Pages → Add a domain**, verify
-   `enproof.com` so another GitHub user cannot claim it
+Certificate issuance can take up to 24 hours after DNS first points at
+GitHub.
+
+## Domain verification (org, not the repo)
+
+Owning the domain at GoDaddy is not the same as locking it on GitHub
+Pages. GitHub Pages uses shared IPs. Verification tells GitHub that only
+the Enproof org may serve `enproof.com` / `www.enproof.com`.
+
+This is **not** the repository Pages page. Use the organization page:
+
+1. Open [Enproof org Pages](https://github.com/organizations/Enproof/settings/pages)
+2. **Add a domain** → `enproof.com` (apex, not `www`)
+3. Add the TXT record GitHub shows (see the DNS table above)
+4. Click **Verify**
+5. Keep that TXT record permanently
 
 ## GoDaddy products
 
