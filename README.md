@@ -15,6 +15,21 @@ python -m http.server 8080
 
 Then open `http://localhost:8080`.
 
+Or double-click `scripts\preview.cmd`.
+
+## Version
+
+The site version is `VERSION` in the repository root. It is shown on the
+home page header and in the footer as `v1.0.0`. Bump it with Python:
+
+```powershell
+python scripts/bump-version.py --current
+python scripts/bump-version.py patch
+python scripts/bump-version.py patch --commit
+```
+
+See [scripts/README.md](scripts/README.md) for the `.bat` helpers.
+
 ## Publishing
 
 GitHub Pages deploys the root of `main`. The `CNAME` file sets
